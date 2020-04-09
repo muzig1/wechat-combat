@@ -1,37 +1,39 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .user_avatar {
-    width: 367rpx;
-    height: 204rpx;
-    margin-top: 160rpx;
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 160rpx;
 }
 
 .user_name {
-    font-size: 32rpx;
-    font-weight: bold;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20rpx;
 }
 
 .signature {
-    font-size: 26rpx;
-    font-weight: bold;
-    line-height: 80rpx;
-    color: #405f80;
+  font-size: 26rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+  color: #405f80;
 }
 
 .signature_container {
-    margin-top: 200rpx;
-    border: 1px solid #405f80;
-    height: 80rpx;
-    width: 200rpx;
-    border-radius: 5px;
-    text-align: center;
+  margin-top: 200rpx;
+  border: 1px solid #405f80;
+  height: 80rpx;
+  width: 200rpx;
+  border-radius: 5px;
+  text-align: center;
 }
 
 page {
-    background-color: #b3b3b3;
-    height: 100%;
+  background-color: #b3b3b3;
+  height: 100%;
 }

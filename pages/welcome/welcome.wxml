@@ -1,7 +1,7 @@
-<view class="container">
-    <image class="user_avatar" src="/images/1535680004920.jpg" />
+<view class="container" bind:tap="onTTap">
+    <image class="user_avatar" src="/images/avatar/2.png" />
     <text class="user_name">Hello Golang</text>
-    <view class="signature_container">
-        <text class="signature">开启小程序之旅</text>
+    <view class="signature_container" bind:tap="onTap">
+        <text class="signature" bind:tap="onSubTap">开启小程序之旅</text>
     </view>
 </view>

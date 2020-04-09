@@ -1,0 +1,30 @@
+<!-- pages/posts/pages.wxml -->
+<view>
+    <swiper indicator-dots="{{true}}" autoplay="{{true}}">
+        <swiper-item>
+            <image src="/images/post/xiaolong.jpg" />
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/post/vr.png" />
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/iqiyi.png" />
+        </swiper-item>
+    </swiper>
+    <block wx:for="{{content}}" wx:for-item="item">
+        <view class="post-container">
+            <view class="post-author-date">
+                <image class="post-author" src="{{item.avatar_img}}" />
+                <text wx:if="{{item.date_condition}}">{{item.date}}</text>
+            </view>
+            <image class="post-image" src="{{item.post_img}}" />
+            <text class="post-content">{{item.content}}</text>
+            <view class="post-bottom">
+                <image src="/images/icon/none-star.png" />
+                <text>{{item.collection_num}}</text>
+                <image src="/images/icon/view.png" />
+                <text>{{item.view_num}}</text>
+            </view>
+        </view>
+    </block>
+</view>

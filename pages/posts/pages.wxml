@@ -15,7 +15,7 @@
         <view class="post-container">
             <view class="post-author-date">
                 <image class="post-author" src="{{item.avatar_img}}" />
-                <text wx:if="{{item.date_condition}}">{{item.date}}</text>
+                <text>{{item.date}}</text>
             </view>
             <image class="post-image" src="{{item.post_img}}" />
             <text class="post-content">{{item.content}}</text>

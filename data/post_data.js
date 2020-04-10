@@ -1,5 +1,6 @@
 var data = [
   {
+    id: 0,
     avatar_img: "/images/avatar/1.png",
     date: "Nov 20 2020",
     post_img: "/images/post/crab.png",
@@ -9,6 +10,7 @@ var data = [
     view_num: 200,
   },
   {
+    id: 1,
     avatar_img: "/images/avatar/1.png",
     date: "Nov 20 2020",
     post_img: "/images/post/crab.png",

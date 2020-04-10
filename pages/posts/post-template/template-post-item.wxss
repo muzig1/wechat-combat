@@ -1,0 +1,46 @@
+.post-container {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #ededed;
+  margin-bottom: 40rpx;
+}
+
+.post-author-date {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.post-author {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx 30rpx 10rpx 20rpx;
+}
+
+.post-image {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.post-content {
+  margin: 0rpx 30rpx 20rpx 30rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.post-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.post-bottom image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+}
+
+.post-bottom text {
+  margin-right: 20rpx;
+}

@@ -66,4 +66,9 @@ Page({
   onShareAppMessage: function () {
     console.log("on share app message");
   },
+
+  onPostTap: function (event) {
+    var index = event.currentTarget.dataset.postid;
+    console.log(index);
+  },
 });

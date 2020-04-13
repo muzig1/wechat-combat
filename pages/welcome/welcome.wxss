@@ -34,6 +34,6 @@
 }
 
 page {
-  background-color: #b3b3b3;
+  background-color: #b3d4db;
   height: 100%;
 }

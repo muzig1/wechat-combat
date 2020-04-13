@@ -69,6 +69,8 @@ Page({
 
   onPostTap: function (event) {
     var index = event.currentTarget.dataset.postid;
-    console.log(index);
+    wx.navigateTo({
+      url: "/pages/posts/post-detail/detail?id=" + index,
+    });
   },
 });

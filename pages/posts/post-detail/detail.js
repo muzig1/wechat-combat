@@ -16,21 +16,44 @@ Page({
       this.setData({ collection: col });
     } else {
       var col = {};
-      col[id] = true;
+      col[id] = false;
       wx.setStorageSync("collection", col);
       wx.setData({ collection: col[id] });
     }
   },
 
   onCollectionTap: function (event) {
-    console.log("ss");
     var col = wx.getStorageSync("collection");
     var collect = col[this.data.currentIndex];
     collect = !collect;
     col[this.data.currentIndex] = collect;
     wx.setStorageSync("collection", col);
     this.setData({ collection: collect });
+    this.showToast(collect, "收藏");
   },
 
-  onShareTap: function (event) {},
+  showToast: function (col, key) {
+    wx.showToast({
+      title: col ? key + "成功" : key + "取消",
+      duration: 1000,
+      mask: false,
+      success: (result) => {},
+      fail: () => {},
+      complete: () => {},
+    });
+  },
+
+  onShareTap: function (event) {
+    var itemList = ["分享到QQ", "分享到微信", "分享到微博"];
+    wx.showActionSheet({
+      itemList: itemList,
+      itemColor: "#000000",
+      success: (result) => {
+        var i = result.tapIndex;
+        this.showToast(true, itemList[i]);
+      },
+      fail: () => {},
+      complete: () => {},
+    });
+  },
 });

@@ -9,14 +9,5 @@ Page({
       fail: () => {},
       complete: () => {},
     });
-    console.log("tap");
-  },
-
-  onTTap: function () {
-    console.log("ttap");
-  },
-
-  onSubTap: function () {
-    console.log("subTap");
   },
 });

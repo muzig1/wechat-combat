@@ -56,4 +56,24 @@ Page({
       complete: () => {},
     });
   },
+
+  onMusicTap: function () {
+    // properties(Read only)(duration,currentTime,paused,buffered)
+    // properties(src(m4a, aac, mp3, wav),startTime,title,epname,singer,coverImgUrl,webUrl,protocol)
+    var backgroundAudioManager = wx.getBackgroundAudioManager();
+    backgroundAudioManager.title = "此时此刻";
+    backgroundAudioManager.epname = "此时此刻";
+    backgroundAudioManager.singer = "许巍";
+    backgroundAudioManager.coverImgUrl =
+      "http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000";
+    // 设置了 src 之后会自动播放
+    backgroundAudioManager.src =
+      "http://music.163.com/song/media/outer/url?id=108220.mp3";
+
+    if (backgroundAudioManager.paused) {
+      backgroundAudioManager.play();
+    } else {
+      backgroundAudioManager.pause();
+    }
+  },
 });

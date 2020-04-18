@@ -1,4 +1,4 @@
-var postData = require("../../../data/post_data.js");
+var postData = require("../../../data/post-data.js");
 
 Page({
   onLoad: function (args) {
@@ -58,22 +58,23 @@ Page({
   },
 
   onMusicTap: function () {
+    var src = postData.data[this.data.currentIndex];
     // properties(Read only)(duration,currentTime,paused,buffered)
     // properties(src(m4a, aac, mp3, wav),startTime,title,epname,singer,coverImgUrl,webUrl,protocol)
     var backgroundAudioManager = wx.getBackgroundAudioManager();
-    backgroundAudioManager.title = "此时此刻";
-    backgroundAudioManager.epname = "此时此刻";
-    backgroundAudioManager.singer = "许巍";
-    backgroundAudioManager.coverImgUrl =
-      "http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000";
+    backgroundAudioManager.title = src.backgroud_music.title;
+    backgroundAudioManager.epname = src.backgroud_music.epname;
+    backgroundAudioManager.singer = src.backgroud_music.singer;
+    backgroundAudioManager.coverImgUrl = src.backgroud_music.cover;
     // 设置了 src 之后会自动播放
-    backgroundAudioManager.src =
-      "http://music.163.com/song/media/outer/url?id=108220.mp3";
+    backgroundAudioManager.src = src.backgroud_music.url;
 
     if (backgroundAudioManager.paused) {
       backgroundAudioManager.play();
+      this.setData({ music: true });
     } else {
       backgroundAudioManager.pause();
+      this.setData({ music: false });
     }
   },
 });

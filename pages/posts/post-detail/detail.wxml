@@ -1,5 +1,5 @@
 <view class="container">
-    <image class="head-img" src="{{head_img}}" />
+    <image class="head-img" src="{{!music?head_img:backgroud_music.cover}}" />
     <image catch:tap="onMusicTap" class="audio" src="/images/music/music-start.png" />
     <view class="author-date">
         <image class="avatar" src="{{avatar_img}}" />

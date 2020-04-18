@@ -1,4 +1,4 @@
-var post_data = require("../../data/post_data.js");
+var post_data = require("../../data/post-data.js");
 
 // pages/posts/pages.js
 Page({

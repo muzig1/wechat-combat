@@ -1,6 +1,10 @@
 var postData = require("../../../data/post-data.js");
+var appInst = getApp();
 
 Page({
+  data: {
+    music: false,
+  },
   onLoad: function (args) {
     var id = args.id;
     var data = postData.data[id];
@@ -19,6 +23,34 @@ Page({
       col[id] = false;
       wx.setStorageSync("collection", col);
       wx.setData({ collection: col[id] });
+    }
+
+    var src = postData.data[this.data.currentIndex];
+    var backgroundAudioManager = wx.getBackgroundAudioManager();
+    backgroundAudioManager.title = src.backgroud_music.title;
+    backgroundAudioManager.epname = src.backgroud_music.epname;
+    backgroundAudioManager.singer = src.backgroud_music.singer;
+    backgroundAudioManager.coverImgUrl = src.backgroud_music.cover;
+    backgroundAudioManager.src = src.backgroud_music.url;
+  },
+
+  onShow: function () {
+    var backgroundAudioManager = wx.getBackgroundAudioManager();
+    var that = this;
+    backgroundAudioManager.onPlay(function () {
+      that.setData({ music: true });
+    });
+    backgroundAudioManager.onPause(function () {
+      that.setData({ music: false });
+    });
+  },
+
+  onReady: function () {
+    var mgr = wx.getBackgroundAudioManager();
+    if (mgr.paused) {
+      this.setData({ music: false });
+    } else {
+      this.setData({ music: true });
     }
   },
 
@@ -58,23 +90,11 @@ Page({
   },
 
   onMusicTap: function () {
-    var src = postData.data[this.data.currentIndex];
-    // properties(Read only)(duration,currentTime,paused,buffered)
-    // properties(src(m4a, aac, mp3, wav),startTime,title,epname,singer,coverImgUrl,webUrl,protocol)
     var backgroundAudioManager = wx.getBackgroundAudioManager();
-    backgroundAudioManager.title = src.backgroud_music.title;
-    backgroundAudioManager.epname = src.backgroud_music.epname;
-    backgroundAudioManager.singer = src.backgroud_music.singer;
-    backgroundAudioManager.coverImgUrl = src.backgroud_music.cover;
-    // 设置了 src 之后会自动播放
-    backgroundAudioManager.src = src.backgroud_music.url;
-
     if (backgroundAudioManager.paused) {
       backgroundAudioManager.play();
-      this.setData({ music: true });
     } else {
       backgroundAudioManager.pause();
-      this.setData({ music: false });
     }
   },
 });

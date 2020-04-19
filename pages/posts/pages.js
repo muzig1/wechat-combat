@@ -24,4 +24,11 @@ Page({
       url: "/pages/posts/post-detail/detail?id=" + index,
     });
   },
+
+  onSwiperTap: function (event) {
+    var postID = event.target.dataset.postid;
+    wx.navigateTo({
+      url: "/pages/posts/post-detail/detail?id=" + postID,
+    });
+  },
 });

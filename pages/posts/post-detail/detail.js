@@ -17,6 +17,10 @@ Page({
     var collection = wx.getStorageSync("collection");
     if (collection) {
       var col = collection[id];
+      collection[id] = false;
+      if (!col) {
+        wx.setStorageSync("collection", collection);
+      }
       this.setData({ collection: col });
     } else {
       var col = {};

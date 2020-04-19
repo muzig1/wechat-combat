@@ -1,15 +1,15 @@
 <!-- pages/posts/pages.wxml -->
 <import src="post-template/template-post-item"></import>
 <view>
-    <swiper indicator-dots="{{true}}" autoplay="{{true}}">
+    <swiper catch:tap="onSwiperTap" indicator-dots="{{true}}" autoplay="{{true}}">
         <swiper-item>
-            <image src="/images/post/xiaolong.jpg" />
+            <image src="/images/post/xiaolong.jpg" data-postid="1" />
         </swiper-item>
         <swiper-item>
-            <image src="/images/post/vr.png" />
+            <image src="/images/post/vr.png" data-postid="2" />
         </swiper-item>
         <swiper-item>
-            <image src="/images/iqiyi.png" />
+            <image src="/images/iqiyi.png" data-postid="0" />
         </swiper-item>
     </swiper>
     <block wx:key="id" wx:for="{{content}}" wx:for-item="item">

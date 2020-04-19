@@ -1,0 +1,16 @@
+.star-img {
+  width: 23rpx;
+  height: 23rpx;
+  margin-left: 2px;
+}
+
+.star-text {
+  font-size: 30rpx;
+  margin-left: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

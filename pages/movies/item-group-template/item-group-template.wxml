@@ -1,0 +1,15 @@
+<import src="../item-template/item-template.wxml"></import>
+<template name="item-group">
+    <view class="item-group-container">
+        <view class="inner-container">
+            <text style="margin-left:5px">正在热映</text>
+            <view class="more">
+                <text>更多</text>
+                <image class="arrow" src="/images/icon/arrow-right.png" />
+            </view>
+            <template is="item" data="{{items}}"></template>
+            <template is="item" data="{{items}}"></template>
+            <template is="item" data="{{items}}"></template>
+        </view>
+    </view>
+</template>

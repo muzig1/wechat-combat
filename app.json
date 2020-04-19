@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/movies/movies",
     "pages/posts/pages",
     "pages/posts/post-detail/detail",
-    "pages/movies/movies",
     "pages/welcome/welcome"
   ],
   "sitemapLocation": "sitemap.json",
@@ -16,13 +16,13 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "pages/posts/pages",
+        "pagePath": "pages/movies/movies",
         "iconPath": "images/tab/dianying.png",
         "selectedIconPath": "images/tab/dianying_hl.png",
         "text": "电影"
       },
       {
-        "pagePath": "pages/movies/movies",
+        "pagePath": "pages/posts/pages",
         "iconPath": "images/tab/yuedu.png",
         "selectedIconPath": "images/tab/yuedu_hl.png",
         "text": "阅读"

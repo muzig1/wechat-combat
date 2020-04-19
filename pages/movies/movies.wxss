@@ -1,1 +1,1 @@
-/* pages/movies/movies.wxss */
+@import "item-group-template/item-group-template.wxss";

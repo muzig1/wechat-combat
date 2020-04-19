@@ -1,0 +1,12 @@
+@import "../star-template/star-template.wxss";
+
+.item-img {
+  width: 180rpx;
+  height: 270rpx;
+}
+
+.item-container {
+  margin-top: 20rpx;
+  margin-right: 50rpx;
+  margin-bottom: 30rpx;
+}

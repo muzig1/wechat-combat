@@ -1,2 +1,8 @@
-<!--pages/movies/movies.wxml-->
-<text>pages/movies/movies.wxml</text>
+<import src="./item-group-template/item-group-template.wxml"></import>
+<view>
+    <view>
+        <template is="item-group" data="{{items}}"></template>
+        <template is="item-group" data="{{items}}"></template>
+        <template is="item-group" data="{{items}}"></template>
+    </view>
+</view>

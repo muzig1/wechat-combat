@@ -5,11 +5,11 @@
 }
 
 .star-text {
-  font-size: 30rpx;
+  font-size: 25rpx;
   margin-left: 10px;
 }
 
-.container {
+.star-container {
   display: flex;
   flex-direction: row;
   align-items: center;

@@ -1,5 +1,5 @@
 <template name="star">
-    <view class="container">
+    <view class="star-container">
         <block wx:key="item" wx:for="{{items}}" wx:for-item="item">
             <image class="star-img" src="{{item}}" />
         </block>

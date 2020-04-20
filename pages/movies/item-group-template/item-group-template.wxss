@@ -4,17 +4,33 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #fff;
 }
 
-.arrow {
-  width: 20rpx;
-  height: 20rpx;
+.item-group-head {
+  padding: 30rpx 20rpx 22rpx;
 }
 
 .more {
   float: right;
 }
 
+.more image {
+  vertical-align: middle;
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.more text {
+  vertical-align: middle;
+  margin-right: 15rpx;
+}
+
 .inner-container {
   margin: 0rpx auto 30rpx;
+}
+
+.item-group-template {
+  display: flex;
+  flex-direction: row;
 }

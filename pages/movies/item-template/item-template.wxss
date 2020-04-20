@@ -3,10 +3,11 @@
 .item-img {
   width: 180rpx;
   height: 270rpx;
+  padding-bottom: 20rpx;
 }
 
 .item-container {
-  margin-top: 20rpx;
-  margin-right: 50rpx;
-  margin-bottom: 30rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 10rpx 20rpx 10rpx 20rpx;
 }

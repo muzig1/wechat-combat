@@ -16,6 +16,26 @@ Page({
     this.setData({
       content: post_data.data,
     });
+
+    var self = this;
+    var reqTask = wx.request({
+      url: "https://gank.io/api/v2/banners",
+      data: {},
+      header: { "content-type": "application/json" },
+      method: "GET",
+      success: (result) => {
+        self.setData({ swipers: result.data });
+        console.log(result.data);
+      },
+      fail: () => {
+        console.log("fail");
+      },
+      complete: () => {
+        console.log("complete");
+      },
+    });
+
+    console.log(this.data);
   },
 
   onPostTap: function (event) {

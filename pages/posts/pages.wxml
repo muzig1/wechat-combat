@@ -2,15 +2,11 @@
 <import src="post-template/template-post-item"></import>
 <view>
     <swiper catch:tap="onSwiperTap" indicator-dots="{{true}}" autoplay="{{true}}">
-        <swiper-item>
-            <image src="/images/post/xiaolong.jpg" data-postid="1" />
-        </swiper-item>
-        <swiper-item>
-            <image src="/images/post/vr.png" data-postid="2" />
-        </swiper-item>
-        <swiper-item>
-            <image src="/images/iqiyi.png" data-postid="0" />
-        </swiper-item>
+        <block wx:for="{{swipers.data}}" wx:for-item="item" wx:for-index="i">
+            <swiper-item>
+                <image src="{{item.image}}" data-postid="{{i}}" />
+            </swiper-item>
+        </block>
     </swiper>
     <block wx:key="id" wx:for="{{content}}" wx:for-item="item">
         <view catch:tap="onPostTap" data-postid="{{item.id}}">

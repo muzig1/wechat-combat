@@ -7,7 +7,7 @@
         <image class="post-image" src="{{post_img}}" />
         <text class="post-content">{{content}}</text>
         <view class="post-bottom">
-            <image src="/images/icon/none-star.png" />
+            <image src="/images/icon/star-anti.png" />
             <text>{{collection_num}}</text>
             <image src="/images/icon/view.png" />
             <text>{{view_num}}</text>

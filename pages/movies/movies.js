@@ -3,15 +3,7 @@ Page({
   /**
    * Page initial data
    */
-  data: {
-    items: [
-      "/images/icon/star.png",
-      "/images/icon/star.png",
-      "/images/icon/star.png",
-      "/images/icon/star-anti.png",
-      "/images/icon/star-anti.png",
-    ],
-  },
+  data: {},
 
   /**
    * Lifecycle function--Called when page load
@@ -32,9 +24,13 @@ Page({
     //   complete: () => {},
     // });
     var girls = wx.getStorageSync("grils");
-    this.setData({ line1: { line: girls.data.slice(0, 3) } });
-    this.setData({ line2: { line: girls.data.slice(4, 7) } });
-    this.setData({ line3: { line: girls.data.slice(8, 11) } });
+    console.log(girls);
+    for (let i in girls.data) {
+      girls.data[i].mystars = [0, 0, 0, 0, 0];
+    }
+    this.setData({ line1: { line: girls.data.slice(0, 3), t: "Top3" } });
+    this.setData({ line2: { line: girls.data.slice(3, 6), t: "热门榜" } });
+    this.setData({ line3: { line: girls.data.slice(6, 9), t: "新人榜" } });
     console.log(this.data);
   },
 

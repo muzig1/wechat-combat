@@ -3,7 +3,7 @@
     <view class="item-group-container">
         <view class="inner-container">
             <view class="item-group-head">
-                <text>正在热映</text>
+                <text>{{t}}</text>
                 <view class="more">
                     <text>更多</text>
                     <image src="/images/icon/arrow-right.png" />

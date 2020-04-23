@@ -10,9 +10,9 @@
                 </view>
             </view>
             <view class="item-group-template">
-                <template is="item" data="{{items}}"></template>
-                <template is="item" data="{{items}}"></template>
-                <template is="item" data="{{items}}"></template>
+                <block wx:for="{{line}}" wx:for-item="elem">
+                    <template is="item" data="{{elem}}"></template>
+                </block>
             </view>
         </view>
     </view>

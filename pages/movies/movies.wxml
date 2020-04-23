@@ -1,8 +1,8 @@
 <import src="./item-group-template/item-group-template.wxml"></import>
 <view>
     <view>
-        <template is="item-group" data="{{items}}"></template>
-        <template is="item-group" data="{{items}}"></template>
-        <template is="item-group" data="{{items}}"></template>
+        <template is="item-group" data="{{...line1}}"></template>
+        <template is="item-group" data="{{...line2}}"></template>
+        <template is="item-group" data="{{...line3}}"></template>
     </view>
 </view>

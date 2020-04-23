@@ -16,7 +16,27 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function (options) {},
+  onLoad: function (options) {
+    var self = this;
+    // var reqTask = wx.request({
+    //   url: "https://gank.io/api/v2/random/category/Girl/type/Girl/count/10",
+    //   header: { "content-type": "application/json" },
+    //   method: "GET",
+    //   dataType: "json",
+    //   responseType: "text",
+    //   success: (result) => {
+    //     console.log(result);
+    //     wx.setStorageSync("grils", result.data);
+    //   },
+    //   fail: () => {},
+    //   complete: () => {},
+    // });
+    var girls = wx.getStorageSync("grils");
+    this.setData({ line1: { line: girls.data.slice(0, 3) } });
+    this.setData({ line2: { line: girls.data.slice(4, 7) } });
+    this.setData({ line3: { line: girls.data.slice(8, 11) } });
+    console.log(this.data);
+  },
 
   /**
    * Lifecycle function--Called when page is initially rendered

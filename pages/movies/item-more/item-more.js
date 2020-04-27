@@ -1,4 +1,4 @@
-var gconf = require("../../../util/util.js");
+var util = require("../../../util/util.js");
 
 // pages/movies/item-more/item-more.js
 Page({
@@ -12,17 +12,18 @@ Page({
    */
   onLoad: function (options) {
     var category = options.category;
-    console.log(category);
-    this.setData({ category: category });
+    switch (category) {
+      case "GanHuo":
+        this.data.navBarTitle = "干货";
+    }
   },
 
   /**
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-    console.log(gconf.gconf.appName);
     wx.setNavigationBarTitle({
-      title: gconf.gconf.appName,
+      title: this.data.navBarTitle,
       success: (result) => {},
       fail: () => {},
       complete: () => {},

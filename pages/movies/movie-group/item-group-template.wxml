@@ -4,7 +4,7 @@
         <view class="inner-container">
             <view class="item-group-head">
                 <text>{{t}}</text>
-                <view class="more" catch:tap="onMoreTap" data-category="{{t}}">
+                <view class="more">
                     <text>更多</text>
                     <image src="/images/icon/arrow-right.png" />
                 </view>

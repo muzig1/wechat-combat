@@ -28,9 +28,9 @@ Page({
     for (let i in girls.data) {
       girls.data[i].mystars = [0, 0, 0, 0, 0];
     }
-    this.setData({ line1: { line: girls.data.slice(0, 3), t: "Top3" } });
-    this.setData({ line2: { line: girls.data.slice(3, 6), t: "热门榜" } });
-    this.setData({ line3: { line: girls.data.slice(6, 9), t: "新人榜" } });
+    this.setData({ line1: { line: girls.data.slice(0, 3), t: "Article" } });
+    this.setData({ line2: { line: girls.data.slice(3, 6), t: "GanHuo" } });
+    this.setData({ line3: { line: girls.data.slice(6, 9), t: "Girl" } });
     console.log(this.data);
   },
 
@@ -68,4 +68,14 @@ Page({
    * Called when user click on the top right corner to share
    */
   onShareAppMessage: function () {},
+
+  onMoreTap: function (event) {
+    var category = event.currentTarget.dataset.category;
+    wx.navigateTo({
+      url: "/pages/movies/item-more/item-more?category=" + category,
+      success: (result) => {},
+      fail: () => {},
+      complete: () => {},
+    });
+  },
 });

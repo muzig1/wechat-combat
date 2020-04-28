@@ -1,4 +1,8 @@
 <import src="../item-template/item-template.wxml"></import>
-<block wx:for="{{res.data}}" wx:for-item="elem">
-    <template is="item" data="{{elem}}"></template>
-</block>
+<view class="grid-container">
+    <block wx:for="{{res.data}}" wx:for-item="elem">
+        <view class="item-container">
+            <template is="item" data="{{elem}}"></template>
+        </view>
+    </block>
+</view>

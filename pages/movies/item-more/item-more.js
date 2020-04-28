@@ -38,7 +38,7 @@ Page({
       category +
       "/type/" +
       typ +
-      "/page/1/count/10";
+      "/page/1/count/12";
     // var reqTask = wx.request({
     //   url: url,
     //   header: { "content-type": "application/json" },

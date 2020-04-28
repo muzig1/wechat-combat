@@ -9,5 +9,5 @@
 .item-container {
   display: flex;
   flex-direction: column;
-  padding: 10rpx 20rpx 10rpx 20rpx;
+  padding: 10rpx 10rpx 10rpx 10rpx;
 }

@@ -1,2 +1,4 @@
-<!--pages/movies/item-more/item-more.wxml-->
-<text>pages/movies/item-more/item-more.wxml</text>
+<import src="../item-template/item-template.wxml"></import>
+<block wx:for="{{res.data}}" wx:for-item="elem">
+    <template is="item" data="{{elem}}"></template>
+</block>

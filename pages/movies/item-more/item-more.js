@@ -1,3 +1,4 @@
+var appInst = getApp();
 var util = require("../../../util/util.js");
 
 // pages/movies/item-more/item-more.js
@@ -11,11 +12,45 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    var category = options.category;
+    let typeList = ["Android", "Android", "Girl"];
+    let category = options.category;
+    this.data.category = category;
+    let typ;
     switch (category) {
       case "GanHuo":
         this.data.navBarTitle = "干货";
+        typ = typeList[0];
+        break;
+      case "Article":
+        this.data.navBarTitle = "文章";
+        typ = typeList[1];
+        break;
+      case "Girl":
+        this.data.navBarTitle = "女孩";
+        typ = typeList[2];
+        break;
+      default:
+        console.log("[Warn] not implement category:" + category);
     }
+    let url =
+      appInst.gconf.gankURN +
+      "data/category/" +
+      category +
+      "/type/" +
+      typ +
+      "/page/1/count/10";
+    // var reqTask = wx.request({
+    //   url: url,
+    //   header: { "content-type": "application/json" },
+    //   method: "GET",
+    //   dataType: "json",
+    //   responseType: "text",
+    //   success: (result) => {
+    //     wx.setStorageSync("more" + category, result.data);
+    //   },
+    //   fail: () => {},
+    //   complete: () => {},
+    // });
   },
 
   /**
@@ -28,6 +63,10 @@ Page({
       fail: () => {},
       complete: () => {},
     });
+
+    let res = wx.getStorageSync("more" + this.data.category);
+    this.setData({ res: res });
+    console.log(this.data);
   },
 
   /**

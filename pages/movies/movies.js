@@ -1,3 +1,5 @@
+var appInst = getApp();
+
 // pages/movies/movies.js
 Page({
   /**
@@ -18,7 +20,7 @@ Page({
       let category = categoryList[i];
       // let reqTask = wx.request({
       //   url:
-      //     "https://gank.io/api/v2/random/category/" +
+      //     appInst.gconf.gankURN+"random/category/" +
       //     category +
       //     "/type/" +
       //     typeList[i] +

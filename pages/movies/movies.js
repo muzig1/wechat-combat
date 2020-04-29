@@ -20,7 +20,8 @@ Page({
       let category = categoryList[i];
       // let reqTask = wx.request({
       //   url:
-      //     appInst.gconf.gankURN+"random/category/" +
+      //     appInst.gconf.gankURN +
+      //     "random/category/" +
       //     category +
       //     "/type/" +
       //     typeList[i] +

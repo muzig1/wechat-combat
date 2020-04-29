@@ -1,8 +1,8 @@
 <import src="../item-template/item-template.wxml"></import>
-<view class="grid-container">
+<scroll-view class="grid-container" scroll-x="false" scroll-y="false" upper-threshold="50" lower-threshold="50" scroll-top="0" scroll-left="0" scroll-into-view="" scroll-with-animation="false" enable-back-to-top="false" bindscrolltoupper="" bindscrolltolower="" bindscroll="">
     <block wx:for="{{res.data}}" wx:for-item="elem">
         <view class="item-container">
             <template is="item" data="{{elem}}"></template>
         </view>
     </block>
-</view>
+</scroll-view>

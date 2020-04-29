@@ -42,6 +42,7 @@ Page({
   },
 
   getDataByCategoryReq: function () {
+    wx.showNavigationBarLoading();
     let req = this.data.getDataByCategoryReq;
     let url =
       appInst.gconf.gankURN +
@@ -65,9 +66,7 @@ Page({
     //       if (!res.data) {
     //         res.data = [];
     //       }
-    //       for (let i in result.data.data) {
-    //         res.data.push(result.data.data[i]);
-    //       }
+    //       res.data = res.data.concat(result.data.data);
     //     } else {
     //       res = result.data;
     //     }
@@ -75,10 +74,13 @@ Page({
     //     that.setData({ res: res });
     //   },
     //   fail: () => {},
-    //   complete: () => {},
+    //   complete: () => {
+    //     wx.hideNavigationBarLoading();
+    //   },
     // });
     let res = wx.getStorageSync("more" + req.category);
     this.setData({ res: res });
+    wx.hideNavigationBarLoading();
   },
 
   /**

@@ -14,7 +14,6 @@ Page({
   onLoad: function (options) {
     let typeList = ["Android", "Android", "Girl"];
     let category = options.category;
-    this.data.category = category;
     let typ;
     switch (category) {
       case "GanHuo":
@@ -32,13 +31,28 @@ Page({
       default:
         console.log("[Warn] not implement category:" + category);
     }
+    this.setData({
+      getDataByCategoryReq: {
+        category: category,
+        type: typ,
+        page: 1,
+      },
+    });
+    this.getDataByCategoryReq();
+  },
+
+  getDataByCategoryReq: function () {
+    let req = this.data.getDataByCategoryReq;
     let url =
       appInst.gconf.gankURN +
       "data/category/" +
-      category +
+      req.category +
       "/type/" +
-      typ +
-      "/page/1/count/12";
+      req.type +
+      "/page/" +
+      req.page +
+      "/count/12";
+    // let that = this;
     // var reqTask = wx.request({
     //   url: url,
     //   header: { "content-type": "application/json" },
@@ -46,11 +60,25 @@ Page({
     //   dataType: "json",
     //   responseType: "text",
     //   success: (result) => {
-    //     wx.setStorageSync("more" + category, result.data);
+    //     let res = wx.getStorageSync("more" + req.category);
+    //     if (res) {
+    //       if (!res.data) {
+    //         res.data = [];
+    //       }
+    //       for (let i in result.data.data) {
+    //         res.data.push(result.data.data[i]);
+    //       }
+    //     } else {
+    //       res = result.data;
+    //     }
+    //     wx.setStorageSync("more" + req.category, res);
+    //     that.setData({ res: res });
     //   },
     //   fail: () => {},
     //   complete: () => {},
     // });
+    let res = wx.getStorageSync("more" + req.category);
+    this.setData({ res: res });
   },
 
   /**
@@ -63,10 +91,6 @@ Page({
       fail: () => {},
       complete: () => {},
     });
-
-    let res = wx.getStorageSync("more" + this.data.category);
-    this.setData({ res: res });
-    console.log(this.data);
   },
 
   /**
@@ -77,12 +101,18 @@ Page({
   /**
    * Lifecycle function--Called when page hide
    */
-  onHide: function () {},
+  onHide: function () {
+    console.log("hide");
+  },
 
   /**
    * Lifecycle function--Called when page unload
    */
-  onUnload: function () {},
+  onUnload: function () {
+    // let req = this.data.getDataByCategoryReq;
+    // wx.setStorageSync("more" + req.category, {});
+    console.log("unload");
+  },
 
   /**
    * Page event handler function--Called when user drop down
@@ -92,7 +122,16 @@ Page({
   /**
    * Called when page reach bottom
    */
-  onReachBottom: function () {},
+  onReachBottom: function () {
+    let req = this.data.getDataByCategoryReq;
+    req.page++;
+    if (req.page >= 5) {
+      return;
+    }
+    this.data.getDataByCategoryReq = req;
+    this.getDataByCategoryReq();
+    console.log("onPullDownRefresh");
+  },
 
   /**
    * Called when user click on the top right corner to share

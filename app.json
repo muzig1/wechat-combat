@@ -2,8 +2,8 @@
   "pages": [
     "pages/movies/movies",
     "pages/posts/pages",
-    "pages/posts/post-detail/detail",
     "pages/welcome/welcome",
+    "pages/posts/post-detail/detail",
     "pages/movies/item-more/item-more"
   ],
   "sitemapLocation": "sitemap.json",

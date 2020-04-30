@@ -17,23 +17,24 @@ Page({
       content: post_data.data,
     });
 
-    var self = this;
-    var reqTask = wx.request({
-      url: "https://gank.io/api/v2/banners",
-      data: {},
-      header: { "content-type": "application/json" },
-      method: "GET",
-      success: (result) => {
-        self.setData({ swipers: result.data });
-        console.log(result.data);
-      },
-      fail: () => {
-        console.log("fail");
-      },
-      complete: () => {
-        console.log("complete");
-      },
-    });
+    // var self = this;
+    // var reqTask = wx.request({
+    //   url: "https://gank.io/api/v2/banners",
+    //   data: {},
+    //   header: { "content-type": "application/json" },
+    //   method: "GET",
+    //   success: (result) => {
+    //     wx.setStorageSync("swipers", result.data);
+    //   },
+    //   fail: () => {
+    //     console.log("fail");
+    //   },
+    //   complete: () => {
+    //     console.log("complete");
+    //   },
+    // });
+    let swiper = wx.getStorageSync("swipers");
+    this.setData({ swipers: swiper });
 
     console.log(this.data);
   },

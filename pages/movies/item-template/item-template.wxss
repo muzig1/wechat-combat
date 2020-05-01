@@ -3,7 +3,9 @@
 .item-img {
   width: 180rpx;
   height: 270rpx;
-  padding-bottom: 20rpx;
+  /* padding-bottom: 20rpx; */
+  border-radius: 10%;
+  overflow: hidden;
 }
 
 .item-container {

@@ -79,6 +79,11 @@ Page({
     //   },
     // });
     let res = wx.getStorageSync("more" + req.category);
+      res.data.forEach(elem => { 
+        if (elem.title.length > 10) {
+          elem.title = elem.title.substring(0, 10) + "..."
+        }
+      });
     this.setData({ res: res });
     wx.hideNavigationBarLoading();
   },
@@ -139,4 +144,13 @@ Page({
    * Called when user click on the top right corner to share
    */
   onShareAppMessage: function () {},
+
+  onPullDownRefresh: function () {
+    console.log("refresh");
+  },
+
+  onItemTap: function (event) {
+    let item = event.currentTarget.dataset.item;
+    console.log(item);
+  },
 });

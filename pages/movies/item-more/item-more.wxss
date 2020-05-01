@@ -1,10 +1,2 @@
 /* pages/movies/item-more/item-more.wxss */
-@import "../item-template/item-template.wxss";
-
-.item-container {
-  float: left;
-}
-
-.grid-container {
-  margin: 10rpx 0rpx 0rpx 40rpx;
-}
+@import "../item-more-template/item-more.wxss";

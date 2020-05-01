@@ -1,7 +1,7 @@
 <import src="../star-template/star-template.wxml" />
 <view class="grid-container">
     <template name="item">
-        <view class="item-container" j>
+        <view class="item-container">
             <image class="item-img" src="{{elem.images[0]}}" />
             <text>{{elem.title}}</text>
             <template is="star" data="{{elem}}" />

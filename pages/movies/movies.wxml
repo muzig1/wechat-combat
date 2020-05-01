@@ -1,8 +1,17 @@
 <import src="./item-group-template/item-group-template.wxml"></import>
-<view>
+<import src="item-more-template/item-more.wxml"></import>
+<view class="search-container">
+    <icon type="search" size="18" color="gray" style="margin:auto 10px auto" />
+    <input type="text" placeholder="斗罗大陆" style="width:100%" bindfocus="onBindFocus" bindblur="onBindBlur" />
+    <icon type="cancel" catch:tap="onCancelTap" size="23" color="gray" style="margin:auto 10px auto 10px" />
+</view>
+<view wx:if="{{open}}">
     <view>
         <block wx:for="{{category}}" wx:for-item="item">
             <template is="item-group" data="{{...item}}"></template>
         </block>
     </view>
+</view>
+<view wx:else>
+    <template is="item-more" data="{{res}}"></template>
 </view>

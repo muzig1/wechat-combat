@@ -5,7 +5,9 @@ Page({
   /**
    * Page initial data
    */
-  data: {},
+  data: {
+    open:true,
+  },
 
   /**
    * Lifecycle function--Called when page load
@@ -38,10 +40,23 @@ Page({
       //   complete: () => {},
       // });
       let data = wx.getStorageSync(category);
+      data.data.forEach(elem => { 
+        if (elem.title.length > 10) {
+          elem.title = elem.title.substring(0, 10) + "..."
+        }
+      });
       lines.push({ line: data.data, t: category });
       console.log(data);
     }
     this.setData({ category: lines });
+
+    let res = wx.getStorageSync("moreGirl");
+    res.data.forEach(elem => { 
+      if (elem.title.length > 10) {
+        elem.title = elem.title.substring(0, 10) + "..."
+      }
+    });
+  this.setData({ res: res });
   },
 
   /**
@@ -88,4 +103,46 @@ Page({
       complete: () => {},
     });
   },
+
+  onBindFocus:function() {
+    this.setData({open:false})
+  },
+
+  onCancelTap: function(e) {
+    this.CloseSearchPanel(e)
+  },
+
+  onBindBlur: function(e) {
+    let v = e.detail.value
+    if (!v) {
+      this.CloseSearchPanel(e)
+      return
+    }
+    this.onSearchReq(e.detail.value)
+  },
+
+  CloseSearchPanel: function(e) {
+    this.setData({open:true})
+    e.detail.value = ""
+  },
+
+  onSearchReq: function(content) {
+    // let url = "https://gank.io/api/v2/search/android/category/GanHuo/type/Android/page/1/count/10"
+    // var reqTask = wx.request({
+    //   url: url,
+    //   header: {'content-type':'application/json'},
+    //   method: 'GET',
+    //   dataType: 'json',
+    //   responseType: 'text',
+    //   success: (result)=>{
+    //     wx.setStorageSync("search", result.data);
+    //     console.log(result.data)
+    //   },
+    //   fail: ()=>{},
+    //   complete: ()=>{}
+    // });
+
+    let res = wx.getStorageSync("search")
+    this.setData({res:res})
+  }
 });

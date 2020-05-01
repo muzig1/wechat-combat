@@ -1,1 +1,10 @@
 @import "item-group-template/item-group-template.wxss";
+@import "item-more-template/item-more.wxss";
+.search-container {
+    display: flex;
+    flex-direction: row;
+    background-color: 	#EAEAEA;
+    height: 80rpx;
+    width: 100%;
+    align-items: center;
+}

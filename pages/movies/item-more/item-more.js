@@ -6,7 +6,10 @@ Page({
   /**
    * Page initial data
    */
-  data: {},
+  data:{
+    src_img:"",
+    open:true,
+  },
 
   /**
    * Lifecycle function--Called when page load
@@ -148,9 +151,13 @@ Page({
   onPullDownRefresh: function () {
     console.log("refresh");
   },
-
+  
   onItemTap: function (event) {
-    let item = event.currentTarget.dataset.item;
-    console.log(item);
+    let elem = event.currentTarget.dataset.src
+    this.setData({src_img:elem.images[0], open:false})
   },
+
+  onImgTap: function(event) {
+    this.setData({open:true})
+  }
 });

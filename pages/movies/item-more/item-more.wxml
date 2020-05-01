@@ -1,4 +1,7 @@
 <import src="../item-more-template/item-more.wxml"></import>
-<view>
+<view wx:if="{{open}}">
     <template is="item-more" data="{{res}}" />
+</view>
+<view wx:else class="blow">
+    <image src="{{src_img}}" catch:tap="onImgTap" mode="aspectFill" />
 </view>

@@ -1,2 +1,13 @@
 /* pages/movies/item-more/item-more.wxss */
 @import "../item-more-template/item-more.wxss";
+
+.blow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blow image {
+    width: 100%;
+    height:724px;
+}

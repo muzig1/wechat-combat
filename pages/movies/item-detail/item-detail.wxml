@@ -1,0 +1,54 @@
+<!-- pages/movies/item-detail/item-detail.wxml -->
+<import src="../star-template/star-template.wxml"></import>
+<view>
+    <image class="cover-img" src="{{cover_img}}" mode="aspectFill" />
+</view>
+<view class="head-container">
+    <text style="font-size:20px">大话西游</text>
+    <text style="">香港 - 1995</text>
+    <view class="head-like-comment">
+        <text style="color:red">{{like_num}}</text>
+        <text>人喜欢</text>
+        <text></text>
+        <text style="color:red">{{comment_num}}</text>
+        <text>条评论</text>
+    </view>
+</view>
+<view>
+    <image class="cover-right-img" src="{{cover_img}}" />
+</view>
+<view class="introduce-container">
+    <view style="margin-bottom:20px">
+        <text>大话西游大结局</text>
+    </view>
+    <view style="display:flex; flex-dirction:row">
+        <text>评分</text>
+        <template is="star" data="{{elem}}"></template>
+    </view>
+    <view>
+        <text>导演</text>
+        <text>{{elem.direct}}</text>
+    </view>
+    <view>
+        <text>影人</text>
+        <text>{{elem.filmmakers}}</text>
+    </view>
+    <view>
+        <text>类型</text>
+        <text>{{elem.type}}</text>
+    </view>
+</view>
+<image />
+<view>
+    <text>标题</text>
+    <text>正文</text>
+</view>
+<image />
+<view>
+    <text>影人</text>
+    <image />
+    <image />
+    <image />
+    <image />
+    <text></text>
+</view>

@@ -1,49 +1,84 @@
 /* pages/movies/item-detail/item-detail.wxss */
-@import "../star-template/star-template.wxss"
-
-.cover-img {
-    position: absolute;
-    width: 100%;
-    height: 350rpx;
-    filter: blur(10rpx);
-    z-index: -1;
-    top: 0px;
+@import "../star-template/star-template.wxss" .cover-img {
+  position: absolute;
+  width: 100%;
+  height: 350rpx;
+  filter: blur(10rpx);
+  z-index: -1;
+  top: 0px;
 }
 
 .cover-right-img {
-    position: absolute;
-    right: 20px;
-    top: 60px;
-    width: 100px;
-    height: 150px;
+  position: absolute;
+  right: 20px;
+  top: 60px;
+  width: 100px;
+  height: 150px;
 }
 
 .head-container {
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
-    margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-top: 30px;
 }
 
 .head-container text {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .head-like-comment {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .head-like-comment text {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .introduce-container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 60px;
-    margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  margin-left: 20px;
 }
 
 .introduce-container text {
-    margin: 10px 20px 0 0;
+  margin: 10px 20px 0 0;
+}
+
+.brief-intro-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px 10px 20px;
+}
+
+.brief-intro-container text {
+  margin-bottom: 10px;
+}
+
+/*分割线样式*/
+.divLine {
+  margin: 20px 0 20px 0;
+  background: #e0e3da;
+  width: 100%;
+  height: 5rpx;
+}
+
+.film-markers-container {
+  margin-left: 20px;
+}
+
+.film-makers {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+
+.film-makers image {
+  width: 100px;
+  height: 100px;
+}
+
+.scroll-view_H {
+  white-space: nowrap;
 }

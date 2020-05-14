@@ -1,17 +1,14 @@
 {
   "pages": [
-    "pages/movies/item-detail/item-detail",
     "pages/movies/movies",
     "pages/posts/pages",
     "pages/welcome/welcome",
     "pages/posts/post-detail/detail",
-    "pages/movies/item-more/item-more"
+    "pages/movies/item-more/item-more",
+    "pages/movies/item-detail/item-detail"
   ],
   "sitemapLocation": "sitemap.json",
-  "requiredBackgroundModes": [
-    "audio",
-    "location"
-  ],
+  "requiredBackgroundModes": ["audio", "location"],
   "window": {
     "navigationBarBackgroundColor": "#405f80"
   },
@@ -31,6 +28,12 @@
         "iconPath": "images/tab/yuedu.png",
         "selectedIconPath": "images/tab/yuedu_hl.png",
         "text": "阅读"
+      },
+      {
+        "pagePath": "pages/movies/item-detail/item-detail",
+        "iconPath": "images/tab/ciwei.png",
+        "selectedIconPath": "images/tab/ciwei_hl.png",
+        "text": "详情"
       }
     ]
   }

@@ -4,8 +4,8 @@
     <image class="cover-img" src="{{cover_img}}" mode="aspectFill" />
 </view>
 <view class="head-container">
-    <text style="font-size:20px">大话西游</text>
-    <text style="">香港 - 1995</text>
+    <text style="font-size:20px">{{name}} ({{date}})</text>
+    <text>{{location}} - {{date}}</text>
     <view class="head-like-comment">
         <text style="color:red">{{like_num}}</text>
         <text>人喜欢</text>
@@ -19,7 +19,7 @@
 </view>
 <view class="introduce-container">
     <view style="margin-bottom:20px">
-        <text>大话西游大结局</text>
+        <text>{{name}}</text>
     </view>
     <view style="display:flex; flex-dirction:row">
         <text>评分</text>
@@ -38,17 +38,20 @@
         <text>{{elem.type}}</text>
     </view>
 </view>
-<image />
-<view>
-    <text>标题</text>
-    <text>正文</text>
+<view class="divLine"></view>
+<view class="brief-intro-container">
+    <text style="color:#C4C4C4">剧情简介</text>
+    <text>{{brief_intro}}</text>
 </view>
-<image />
-<view>
-    <text>影人</text>
-    <image />
-    <image />
-    <image />
-    <image />
+<view class="divLine"></view>
+<view class="film-markers-container">
+    <text style="color:#C4C4C4">影人</text>
+    <view class="film-makers">
+        <scroll-view scroll-x="{{true}}" class="scroll-view_H" bindscroll="scroll" style="width: 100%">
+            <block wx:for="{{film_makers}}" wx:for-item="item">
+                <image src="{{item}}" />
+            </block>
+        </scroll-view>
+    </view>
     <text></text>
 </view>
